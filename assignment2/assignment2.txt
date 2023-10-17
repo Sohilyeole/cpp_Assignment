@@ -1,0 +1,29 @@
+Q1
+--> output is :0
+
+Q2
+--> 1 1
+Q3
+-->2
+Q4 WAP for finding the volume of the cylinder by taking radius and height as input.
+ -->#include<iostream>
+     using namespace std;
+     int main(){
+      float hright,radius;
+      cout<<"enter height and radius of cylinder"<<endl;
+      cin>>height>>radius;
+      cout<<"volume:"<<3.14*radius*radius*height;
+     }
+
+Q5WAP to find the difference between ASCII of two characters ,take them as input .
+--> #include<iostream>
+     using namespace std;
+     int main(){
+      char ch1,ch2;
+      cout<<"enter charcter 1 & 2 "<<endl;
+      cin>>ch1>>ch2;
+      cout<<"difference:"<<int(ch1)-int(ch2)
+     }
+
+Q6 
+-->49
