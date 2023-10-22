@@ -1,0 +1,126 @@
+Q1
+--> infinite time loop run with "In while loop"
+
+Q2
+-->Hello
+   Hello
+   Hello
+
+Q3
+-->In for loop
+   In for loop
+   In for loop
+
+Q4
+-->
+9 1
+8 2
+7 3
+6 4
+5 5
+4 6
+
+Q5WAP to print the sum of all the even digits of a given number.
+-->#include<iostream>
+using namespace std;
+int main(){
+  int n;
+  int digit,sum=0;
+  cout<<"enter the number";
+  cin>>n;
+  while(n>0){
+    digit=n%10;
+    if(digit%2==0){
+        sum=sum+digit;
+    }
+    n=n/10;
+  }
+  cout<<sum;
+}
+
+Q6WAP to print the sum of a given number and its reverse.
+-->#include<iostream>
+using namespace std;
+int main(){
+  int n;
+  
+ 
+  int rev=0;
+  
+  cout<<"enter the number";
+  cin>>n;
+  int originalnumber=n;
+  while(n>0){
+   rev=rev*10+(n%10);
+    n=n/10;
+  }
+  cout<<"sum"<<originalnumber+rev;
+  
+}
+
+Q7Print the factorials of first ‘n’ numbers
+-->#include<iostream>
+using namespace std;
+int main(){
+  int n;  
+  int fact=1;
+  cout<<"enter the number";
+  cin>>n;
+  for(int i=1;i<=n;i++){
+    
+     cout<<i*fact<<endl;
+     fact=i*fact;
+
+  }
+  
+}
+
+Q8Print first ‘n’ fibonacci numbers.
+-->#include<iostream>
+using namespace std;
+int main(){
+  int n;  
+  int a=1,b=1,c;
+  cout<<"enter the number";
+  cin>>n;
+  cout<<a<<endl;
+  cout<<b<<endl;
+  for(int i=1;i<=n;i++){
+    c=a+b;
+    cout<<c<<endl;
+    a=b;
+    b=c;
+
+
+  }
+  
+}
+
+Q9Write a program to print out all Armstrong numbers between 1 and 500. If the sum of cubes of
+each digit of the number is equal to the number itself, then the number is called an Armstrong
+number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5 * 5 ) + ( 3 * 3 * 3 )
+-->
+#include<iostream>
+using namespace std;
+int main(){
+ for(int i=1;i<=500;i++){
+   int temp=i;
+   int sum=0;
+   while(temp>0){
+      
+      int d=temp%10;
+      sum=sum+(d*d*d);
+      temp=temp/10;
+   }
+   if(sum==i){
+      cout<<i;
+   }
+ }
+
+
+
+ 
+ 
+}
+
+
