@@ -1,0 +1,303 @@
+Q1
+-->#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+
+Q2
+1 2 3 4
+1 2 3
+1 2
+1
+-->#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n+1-i;j++){
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+
+Q3
+A
+A B
+A B C
+A B C D
+-->#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<char(j+64);
+        }
+        cout<<endl;
+    }
+}
+
+Q4
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            if(i%2==0){
+             cout<<char(j+64);
+            }
+            else{
+               cout<<j;
+            }
+            
+        }
+        cout<<endl;
+    }
+}
+
+Q5
+-->
+*
+**
+***
+****
+***
+**
+*
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+    for(int i=1;i<=n*2-1;i++){
+        if(i<=n){
+    
+        for(int j=1;j<=i;j++){
+            cout<<"*";
+            
+        }
+        cout<<endl;
+    }
+    else{
+       
+        for(int k=1;k<=(n*2-i);k++){
+            cout<<"*";
+            
+        }
+        cout<<endl;
+    }
+    }
+}
+
+Q6-->
+******
+*    *
+*    *
+******
+#include<iostream>
+using namespace std;
+int main(){
+    int m;
+    cout<<"enter the value of row : ";
+    cin>>m;
+    int n;
+     cout<<"enter the value of col: ";
+    cin>>n;
+    for(int i=1;i<=m;i++){
+        
+    
+        for(int j=1;j<=n;j++){
+
+            if(i==1||i==m){
+                cout<<"*";
+            }
+            else if(j==1||j==n){
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
+            
+           
+        }
+        cout<<endl;
+
+    
+    
+       
+    }
+}
+
+Q7
+   ****
+  ****
+ ****
+****
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+   
+    for(int i=1;i<=n;i++){
+        
+        for(int j=1;j<=n-i;j++){
+        cout<<" ";
+        }
+        for(int k=1;k<=n;k++){
+            cout<<"*";
+        }
+        cout<<endl;
+
+    }
+}
+
+Q8
+Sample Input : n= 4
+Output :
+1
+1 2
+1 2 3
+1 2 3 4
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+   
+    for(int i=1;i<=n;i++){
+        
+        for(int j=1;j<=i;j++){
+        cout<<j;
+        }
+       cout<<endl;
+
+    }
+}
+
+Q9
+Input : n = 4
+Output :
+A
+A B
+A B C
+A B C D
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+   
+    for(int i=1;i<=n;i++){
+        int z=65;
+        for(int j=1;j<=n;j++){
+            if(j>=n+1-i)
+        cout<<char(z++);
+        else
+        cout<<" ";
+        }
+       cout<<endl;
+
+    }
+}
+
+Q10
+Input: n = 4
+Output:
+1
+2 1
+3 2 1
+4 3 2 1
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+       
+   int t=1;
+    for(int i=1;i<=n;i++){
+   
+        for(int j=i;j>=1;j--){
+          cout<<j;
+        }
+       cout<<endl;
+
+    }
+}
+Q11
+Input: n = 4
+Output:
+   *
+  **
+ ***
+****
+ ***
+  **
+   *
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value of n : ";
+    cin>>n;
+       
+  
+    for(int i=1;i<=n*2-1;i++){
+        if(i<=n){
+        for(int j=1;j<=n;j++){
+          if(n+1-i<=j){
+            cout<<"*";
+          }
+          else{
+            cout<<" ";
+          }
+        }
+        cout<<endl;
+        }
+        
+        else{
+        for(int k=1;k<=n;k++){
+             if(k>i-n){
+            cout<<"*";
+          }
+          else{
+            cout<<" ";
+          }
+        }
+        cout<<endl;
+
+        }
+        
+       cout<<endl;
+
+    }
+}
+    
+
+
