@@ -1,0 +1,450 @@
+Q1
+Input: n = 5
+Output:
+   1
+  123
+ 12345
+1234567
+-->#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int nst=1;
+    cout<<"enter the value on n:";
+    cin>>n;
+    for(int i=1;i<=n-1;i++){
+        //spaces
+        for(int j=1;j<=n-i-1;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=nst;k++){
+            cout<<k;
+        }
+        nst=nst+2;
+        cout<<endl;
+    }
+
+}
+Q2
+Input: n = 4
+Output:
+   A
+  ABC
+ ABCDE
+ABCDEFG
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int nst=1;
+    cout<<"enter the value on n:";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        //spaces
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=nst;k++){
+            cout<<char(k+64);
+        }
+        nst=nst+2;
+        cout<<endl;
+    }
+
+}
+
+Q3
+Input: n = 4
+Output:
+   A
+  BAB
+ CBABC
+DCBABCD
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int t=1;
+    cout<<"enter the value on n:";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        //spaces
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=i;k>=1;k--){
+            cout<<char(k+64);
+        }
+       
+        for(int m=1;m<t;m++){
+            cout<<char(m+65);
+        }
+    t++;
+        cout<<endl;
+    }
+
+}
+
+Q4
+Input: n = 4
+Output:
+
+ABCDEFG
+ABC EFG
+AB   FG
+A     G
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int nsp=1;
+    cout<<"enter the value on n:";
+    cin>>n;
+    int m=n-1;
+    int val=1;
+    for(int a=1;a<=n*2-1;a++){
+        cout<<char(a+64);
+    }
+    cout<<endl;
+    for(int i=1;i<=m;i++){
+       val=1;
+        for(int k=1;k<=m-i+1;k++){
+            cout<<char(val+64);
+            val++;
+        }
+       
+         //spaces
+        for(int j=1;j<=nsp;j++){
+            cout<<" ";
+            val++;
+          
+
+        }
+        nsp=nsp+2;
+        for(int p=1;p<=n-i;p++){
+           cout<<char(val+64);
+           val++;
+        }
+        
+        cout<<endl;
+    }
+
+}
+
+Q5
+Input: n = 4
+Output:
+1234321
+123 321
+12   21
+1     1
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int nsp=1;
+    cout<<"enter the value on n:";
+    cin>>n;
+    int m=n-1;
+    int val=1;
+    for(int a=1;a<=n*2-1;a++){
+        cout<<val;
+       if(a<4)val++;
+       else val--;
+    }
+    cout<<endl;
+    for(int i=1;i<=m;i++){
+       val=1;
+        for(int k=1;k<=m-i+1;k++){
+            cout<<val;
+            val++;
+        }
+       
+         //spaces
+        for(int j=1;j<=nsp;j++){
+            cout<<" ";
+       
+        }
+        nsp=nsp+2;
+    
+        for(int p=val-1;p>=1;p--){
+           cout<<p;
+           val--;
+        }
+        
+        cout<<endl;
+    }
+
+}
+
+Q6
+*       *
+ *     *
+  *   *
+   * *
+    *
+-->#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int nsp = 0;
+
+    cout << "enter the value on n:";
+    cin >> n;
+    int nspn = (n - 1) * 2 - 1;
+
+    for (int i = 1; i <= n; i++)
+    {
+        // spaces
+        for (int j = 1; j <= nsp; j++)
+        {
+            cout << " ";
+        }
+        nsp++;
+        for (int k = 1; k <= 1; k++)
+        {
+            cout << "*";
+        }
+        // spaces
+        for (int p = 1; p <= nspn; p++)
+        {
+            cout << " ";
+        }
+        nspn = nspn - 2;
+
+        for (int a = 1; a <= 1; a++)
+        {
+            if (i <= n - 1)
+            {
+                cout << "*";
+            }
+        }
+
+        cout << endl;
+    }
+}
+
+Q7
+   *
+  * *
+ *   *
+*     *
+ *   *
+  * *
+   *
+-->
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+
+    cout << "enter the value on n:";
+    cin >> n;
+    int nsp = n - 1;
+    int nspn = 1;
+
+    for (int i = 1; i <= n * 2 - 1; i++)
+    {
+        // spaces
+        for (int j = 1; j <= nsp; j++)
+        {
+
+            cout << " ";
+        }
+
+        for (int k = 1; k <= 1; k++)
+        {
+            cout << "*";
+        }
+        // spaces
+        for (int p = 1; p <= nspn; p++)
+        {
+            if (i > 1)
+            {
+                cout << " ";
+            }
+            else
+            {
+                nspn = -1;
+            }
+        }
+        if (i <= n - 1)
+        {
+            nsp--;
+            nspn = nspn + 2;
+        }
+        else
+        {
+            nsp++;
+            nspn = nspn - 2;
+        }
+
+        for (int a = 1; a <= 1; a++)
+        {
+            if (i == 1 || i == n * 2 - 1)
+            {
+                cout << " ";
+            }
+            else
+            {
+                cout << "*";
+            }
+        }
+
+        cout << endl;
+    }
+}
+Q8
+   1
+  2 2
+ 3  3
+4   4
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int p=1;
+   
+    cout<<"enter the value on n:";
+    cin>>n;
+     int nsp=n-1;
+    
+    
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=nsp;j++){
+            cout<<" ";
+        }
+        nsp--;
+        cout<<p;
+        for(int k=1;k<i;k++){
+            cout<<" ";
+        }
+        if(i!=1)
+        cout<<p;
+        p++;
+        
+        cout<<endl;
+    }
+
+}
+
+Q10
+Input : n = 4
+Output :
+*     *
+**   **
+*** ***
+*******
+*******
+*** ***
+**   **
+*     *
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    int b=3;
+    
+   
+    cout<<"enter the value on n:";
+    cin>>n;
+    int nsp=(n-1)*2-1;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<"*";
+        }
+        for(int k=1;k<=nsp;k++){
+            cout<<" ";
+        }
+        nsp=nsp-2;
+        if(n!=i)b=i;
+        for(int p=1;p<=b;p++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+
+    for(int p=1;p<=n*2-1;p++){
+        cout<<"*";
+    }
+    cout<<endl;
+    for(int q=1;q<=n-1;q++){
+        for(int j=n-q;j>=1;j--){
+            cout<<"*";
+        }
+        for(int k=1;k<=q*2-1;k++){
+           cout<<" ";
+        }
+        for(int j=n-q;j>=1;j--){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+
+}
+
+Q11
+*******
+*** ***
+**   **
+*     *
+**   **
+*** ***
+*******
+-->
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the value on n:";
+    cin>>n;
+    int m=n-1;
+    int nspr=n*2-1-4;
+    
+    for(int a=1;a<=n*2-1;a++){
+        cout<<"*";
+    }
+    cout<<endl;
+    for(int i=1;i<=n-1;i++){
+        for(int j=1;j<=m-i+1;j++){
+            cout<<"*";
+        }
+        for(int k=1;k<=i*2-1;k++){
+            cout<<" ";
+        }
+        for(int j=1;j<=m-i+1;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    for(int j=1;j<=m-1;j++){
+        for(int a=1;a<=j+1;a++){
+            cout<<"*";
+
+        }
+        for(int k=1;k<=nspr;k++){
+           cout<<" ";
+        }
+        nspr=nspr-2;
+        for(int a=1;a<=j+1;a++){
+            cout<<"*";
+
+        }
+
+
+        cout<<endl;
+    }
+     for(int c=1;c<=n*2-1;c++){
+        cout<<"*";
+    }   
+    cout<<endl;
+
+}
