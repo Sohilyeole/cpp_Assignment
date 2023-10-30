@@ -1,0 +1,57 @@
+Q1 : Write a program to find the product of two numbers using pointers.
+-->
+#include<iostream>
+using namespace std;
+void productor(int x,int y, int *ptr){
+  *ptr=x*y;
+}
+int main(){
+    int x,y;
+    cout<<"Enter the value of two numbers : "<<endl;
+    cin>>x>>y;
+    int product;
+    
+    productor(x,y,&product);
+    cout<<product;
+}
+
+Q2 : int *p, q;
+p is a pointer and q is an integer.
+p and q both are pointers.
+P and q both are integers.
+Syntax is incorrect.
+
+-->
+p is a pointer and q is an integer.
+
+Q3: Find the output of the following code snippet.
+int a = 10, b = 20;
+int *ptr = &a;
+b = *ptr + 1;
+ptr = &b;
+cout << *ptr << ‘ ‘ << a << ‘ ‘ << b;
+11 11 10
+10 10 10
+11 10 11
+10 11 10
+
+-->
+11 10 11
+
+Q4: Find the output of the following code snippet.
+int a = 15, b = 20;
+int *ptr = &a;
+int *ptr2 = &b;
+*ptr = *ptr2;
+ptr now points to b
+ptr2 now points to a
+a gets value of b
+b gets value of a
+-->
+a gets value of b
+
+Q5: Is the following program snippet correct?
+int a = 10, b = 20;
+int *ptr;
+*ptr = 5;
+--> yes donot show error but in genral in pointer variable we store address;
