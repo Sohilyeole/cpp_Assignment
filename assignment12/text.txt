@@ -1,0 +1,210 @@
+ Q1 Count the number of elements strictly greater than x.
+ -->
+ #include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int arr[5]={11,23,2,32,4};
+    int count=0;
+    int x;
+    cout<<"enter the number";
+    cin>>x;
+    for(int i=0;i<5;i++){
+        if(arr[i]>x){
+            count++;
+        }
+    }
+    cout<<"number of count : "<<count; 
+}
+
+Q 2 WAP to find the largest three elements in the array.
+-->
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int arr[5]={11,23,2,32,4};
+   int first=arr[0];
+   int second=arr[0];
+   int third=arr[0];
+    
+    for(int i=0;i<5;i++){
+       if(arr[i]>first){
+        third=second;
+        second=first;
+        first=arr[i];
+       }
+       else if(arr[i]>second&&arr[i]!=first){
+        third=second;
+        second=arr[i];
+       }
+       else if(arr[i]>third && arr[i]!=second &&arr[i]!=first)
+        third=arr[i];
+       }
+        
+        cout<<first<<second<<third;
+       }
+Q3 Check if the given array is sorted or not
+-->
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int arr[5] = {4, 5, 8, 12, 23};
+
+    int arr_size = 5;
+    bool flag = false;
+
+    for (int i = 0; i < arr_size; i++)
+    {
+        for (int j = i + 1; j < arr_size; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                flag = true;
+            }
+        }
+    }
+    if (flag == false)
+    {
+        cout << "array is sorted" << endl;
+    }
+    else
+    {
+        cout << "array is unsorted" << endl;
+    }
+}
+
+Q4 Find the difference between the sum of elements at even indices to the sum of elements at odd
+indices.
+-->
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int arr[8] = {4, 5, 8, 12, 23, 45,2,56};
+
+    int arr_size = 8;
+    int sum_odd_indices=0;
+     int sum_even_indices=0;
+    
+
+
+    for (int i = 0; i < arr_size; i++){
+        if(i%2==0){
+            sum_even_indices=sum_even_indices+arr[i];
+        }
+        else{
+             sum_odd_indices=sum_odd_indices+arr[i];
+        }
+
+    }
+
+    cout<<sum_even_indices<<endl;
+    cout<<sum_odd_indices<<endl;
+    
+}
+Q5 Given an array of integers, change the value of all odd indexed elements to its second multiple
+and increment all even indexed values by 10.
+-->
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int arr[8] = {4, 5, 8, 12, 23, 45,2,56};
+
+    int arr_size = 8;
+
+    for (int i = 0; i < arr_size; i++){
+        if(i%2==0){
+         arr[i]=arr[i]+10;
+        }
+        else{
+             arr[i]=arr[i]*2;
+        }
+
+    }
+
+    for(int j=0;j<arr_size;j++){
+        cout<<arr[j]<<"  ";
+    }
+    
+}
+Q6 Find the unique number in a given Array where all the elements are being repeated twice with one
+value being unique.
+-->
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int arr[8] = {4,5,4,5,6,7};
+
+    int arr_size = 6;
+   
+
+    for (int i = 0; i < arr_size; i++){
+         int match=0;
+    for(int j=0;j<arr_size;j++){
+        if(arr[i]==arr[j]&&i!=j){
+            match++;
+            break;
+          
+        }
+        
+       
+    }
+    if(match==0){
+        cout<<"unique: "<<arr[i]<<endl;;
+    }
+    
+    }
+    
+}
+
+Q7 If an array arr contains n elements, then check if the given array is a palindrome or not .
+-->
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> arr = {1, 2, 3, 2, 1};
+    vector<int> v2(arr.size());
+    int i = 0;
+    int j = arr.size() - 1;
+    //reverse array
+    while (i <= j)
+    {
+        int temp = arr[i];
+        v2[i] = arr[j];
+        v2[j] = temp;
+        i++;
+        j--;
+    }
+    if (arr == v2)
+    {
+        cout << "palidrome";
+    }
+    else
+    {
+        cout << "not palidrome";
+    }
+}
+Q8 Find the error.
+double getAverage(int arr[], int size);
+int main () {
+int balance[5] = {1000, 2, 3, 17, 50};
+double avg;
+avg = getAverage( balance[0], 5 ) ;
+cout << "Average value is: " << avg << endl;
+return 0;
+}
+-->
+in main function getAverage function is called with parameter like first parameter is array but in this case parameter is number
+so invalid parameter is pass
+right way--->avg = getAverage( balance, 5 ) 
