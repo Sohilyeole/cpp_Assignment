@@ -1,0 +1,196 @@
+Q1 Write a program to store 10 at every index of a 2D matrix with 5 rows and 5 columns.
+-->
+#include<iostream>
+using namespace std;
+void print(int arr[5][5]){
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+int main(){
+    int arr[5][5];
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            arr[i][j]=10;
+        }
+    }
+    print(arr);
+}
+
+Q2 Write a program to add two matrices and save the result in one of the given matrices.
+-->
+#include<iostream>
+using namespace std;
+void print(int arr[3][3]){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+int main(){
+    int arr1[3][3]={1,2,3,4,5,6,7,8,9};
+    int arr2[3][3]={1,2,3,4,5,6,7,8,9};
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            arr2[i][j]=arr2[i][j]+arr1[i][j];
+        }
+    }
+
+    print(arr2);
+}
+
+Q3: Given a matrix ‘A’ of dimension n x m and 2 coordinates (l1, r1) and (l2, r2). Return the sum of the
+rectangle from (l1,r1) to (l2, r2).
+-->
+#include<iostream>
+using namespace std;
+
+int main(){
+    int arr1[4][4]={1,2,-3,4 ,0 ,0 ,-4 ,2,1 ,-1 ,2 ,3,-4, -5, -7, 0};
+   int l1 = 1, r1 = 0, l2 = 0, r2 = 3;
+   int sum=0;
+ int bigl ,sml,bigr,smr;
+
+ if(l1>l2){
+    bigl=l1;
+    sml=l2;
+ }
+ else{
+    bigl=l2;
+    sml=l1;
+ }
+ if(r1>r2){
+    bigr=r1;
+    smr=r2;
+ }
+ else{
+      bigr=r2;
+    smr=r1;
+ }
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+          if(i>=sml && i<=bigl && j>=smr && j<=bigr){
+            sum=sum+arr1[i][j];
+            
+          }
+        }
+    }
+    cout<<sum;
+
+}
+Q4 Write a C++ program to find the largest element of a given 2D array of integers.
+-->
+#include<iostream>
+#include <climits>
+using namespace std;
+int main(){
+    int row;
+    int col;
+    cout<<"enter row : ";
+    cin>>row;
+     cout<<"enter col : ";
+    cin>>col;
+    int arr[row][col];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>arr[i][j];
+        }
+    }
+
+int big=arr[0][0];
+
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(arr[i][j]>big){
+                big=arr[i][j];
+            }
+        }
+     
+    }
+     cout<<big;
+     
+}
+
+Q5 Q5: Write a program to print the row number having the maximum sum in a given matrix.
+-->
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int main(){
+   int row;
+    int col;
+    cout<<"enter row : ";
+    cin>>row;
+     cout<<"enter col : ";
+    cin>>col;
+    int arr[row][col];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>arr[i][j];
+        }
+    }
+    
+ int bsum=INT_MIN;
+ int rown;
+    for(int i=0;i<row;i++){
+        int sum=0;
+          for(int j=0;j<col;j++){
+            sum=sum+arr[i][j];
+          }
+        
+        if(sum>bsum){
+            bsum=sum;
+            rown=i;
+
+        }
+    }
+    cout<<rown;
+
+}
+
+Q6 Q6: Write a function which accepts a 2D array of integers and its size as arguments and displays the
+elements of middle row and the elements of middle column.
+[Assuming the 2D Array to be a square matrix with odd dimensions i.e. 3x3, 5x5, 7x7 etc...]
+-->
+#include<iostream>
+#include<climits>
+# define row 5
+# define col 5
+using namespace std;
+
+void display(int arr[row][col]){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(i==row/2){
+                cout<<arr[i][j];
+            }
+            else if(j==col/2 ){
+            cout<<arr[i][j];
+        }
+       
+        else{
+            cout<<" ";
+        }
+       
+    }
+    cout<<endl;
+}
+}
+
+int main(){
+  
+    int arr[row][col];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>arr[i][j];
+        }
+    }
+    display(arr);
+    
+}
