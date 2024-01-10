@@ -116,7 +116,7 @@ int big=arr[0][0];
      
 }
 
-Q5 Q5: Write a program to print the row number having the maximum sum in a given matrix.
+Q5 : Write a program to print the row number having the maximum sum in a given matrix.
 -->
 #include<iostream>
 #include<climits>
@@ -154,7 +154,7 @@ int main(){
 
 }
 
-Q6 Q6: Write a function which accepts a 2D array of integers and its size as arguments and displays the
+Q6 : Write a function which accepts a 2D array of integers and its size as arguments and displays the
 elements of middle row and the elements of middle column.
 [Assuming the 2D Array to be a square matrix with odd dimensions i.e. 3x3, 5x5, 7x7 etc...]
 -->
