@@ -1,0 +1,136 @@
+Q1 Input a string and concatenate with its reverse string and print it.
+-->
+#include<iostream>
+#include<sstream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main(){
+    cout<<"Enter the string : "<<endl;
+    string s;
+    cin>>s;
+    string t=s;
+    reverse(t.begin(),t.end());
+    cout<<s+t;
+}
+
+Q2 Find the second largest digit in the string consisting of digits from ‘0’ to ‘9’.
+-->
+#include<iostream>
+#include<sstream>
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<climits>
+using namespace std;
+int main(){
+    cout<<"Enter the string : "<<endl;
+    string s;
+    cin>>s;
+    int mx=INT_MIN;
+    int mx2=INT_MIN;
+    for(int i=0;i<s.length();i++){
+        
+        int a=(int)s[i];
+      if(a>mx)mx=a;
+      
+    }
+   for(int i=0;i<s.length();i++){
+        
+        int a=(int)s[i];
+      if(a>mx2&&a<mx)mx2=a;
+      
+    }
+          
+          cout<<mx2-48;
+
+    }
+  
+Q3 Input a string and return the number of substrings that contain only vowels.
+-->
+#include<iostream>
+#include<sstream>
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<climits>
+using namespace std;
+bool isvowel(char a){
+     if(a=='a'|| a=='e'||a=='i'|| a=='o'|| a=='u' ){
+        return true;
+        }
+        return false;
+}
+
+int main(){
+    cout<<"Enter the string : "<<endl;
+    string s;
+    cin>>s;
+    int count=0;
+    int fcount=0;
+    int p=0;
+    for(int i=p;i<s.length();i++){
+      if(isvowel(s[i])){
+        
+         count++;
+        
+      }
+      
+      else{
+       
+        count=0;
+      }
+      
+      fcount=fcount+count;
+     
+    }
+    cout<<fcount<<endl;
+
+   }
+  
+  Q4 Given an array of strings. Check whether they are anagram or not.
+  -->
+  
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main(){
+    string s,t;
+    cout<<"Enter the first string";
+    cin>>s;
+     cout<<"Enter the second string";
+    cin>>t;
+    sort(s.begin(),s.end());
+    sort(t.begin(),t.end());
+    if(s==t)cout<<"anagram";
+    else cout<<"not anagram";
+}
+
+Q5 Given a sentence ‘str’, return the word that is lexicographically maximum.
+-->
+
+#include<iostream>
+#include<string>
+#include<sstream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+  string s;
+  vector<string>v;
+  getline(cin,s);
+  // cout<<s;
+  stringstream ss(s);
+  string temp;
+  while(ss>>temp){
+    v.push_back(temp);
+  }
+ 
+  sort(v.begin(),v.end());
+  cout<<v[v.size()-1];
+
+  
+ 
+}
