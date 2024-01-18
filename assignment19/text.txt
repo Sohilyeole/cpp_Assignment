@@ -1,0 +1,46 @@
+Q1 Calculate the time complexity for the following code snippet.
+int c = 0;
+for(int i = n; i > 0; i /= 2) {
+c++;
+}
+-->O(logn)
+
+Q2 Calculate the time complexity for the following code snippet.
+int c = 0;
+for(int i = n; i > 1; i /= i) {
+c++;
+}
+-->
+O(1)
+
+Q3 Calculate the time complexity for the following code snippet where k is some constant (k<<n).
+int c = 0;
+for(int i = 0; i < n; i += k) {
+c++;
+}
+-->O(n);
+
+Q4 Calculate the time complexity for the following code snippet.
+int c = 0;
+for(int i = 1; i < n; i *= 2) {
+c++;
+}
+
+--> O(logn)
+
+Q5 Calculate the time complexity for the following code snippet.
+int c = 0;
+for(int i = 0; i < n; i++) {
+c +=i;
+}
+--> O(n)
+
+Q6 Calculate the time complexity for the following code snippet.
+
+int c = 0;
+for(int i = 0; i < n; i++) {
+for(int j = 0; j < i; j++){
+c++;
+}
+}
+-->O(n^2)
