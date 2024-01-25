@@ -1,0 +1,51 @@
+
+Q1 What is an in-place sorting algorithm?
+a) It needs O(1) or O(logn) memory to create auxiliary locations
+b) The input is already sorted and in-place
+c) It requires additional storage
+d) It requires additional space
+-->
+a) It needs O(1) or O(logn) memory to create auxiliary locations
+
+Q2 In the following scenarios, when will you use selection sort?
+a) The input is already sorted
+b) A large file has to be sorted
+c) Large values need to be sorted with small keys
+d) Small values need to be sorted with large keys
+
+-->c) Large values need to be sorted with small keys
+
+Q3 Given an integer array and an integer k where k<=size of array, We need to return the kth
+smallest element of the array.
+-->
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+#include<climits>
+
+int main(){
+    vector<int>v={11,4,63,74,2,3,5,74,78};
+    int k;
+    cin>>k;
+    //by using selection sorting
+    for(int i=0;i<k;i++){
+        int mindx=-1;
+        int mn=INT_MAX;
+        for(int j=i;j<v.size();j++){
+            if(v[j]<mn){
+                mn=v[j];
+                mindx=j;
+            }
+        }
+        int temp=v[i];
+        v[i]=mn;
+        v[mindx]=temp;
+
+
+    }
+    cout<<v[k-1];
+}
+
+
+
