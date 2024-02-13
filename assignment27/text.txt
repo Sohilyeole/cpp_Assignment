@@ -1,0 +1,97 @@
+Q1 Print all the elements of an array in reverse order.
+-->
+void print(int arr[],int x){
+    if(x==0)return ;
+    cout<<arr[x-1];
+    print(arr,x-1);
+}
+int main(){
+  int arr[]={1,2,3,4,5,6,7,8};
+  print(arr,8);
+}
+
+Q2 Print index of a given element in an array. If not present, print -1.
+-->
+int print(int arr[],int x,int target){
+   if(x==0)return -1;
+   if(arr[x-1]==target)return x-1;
+   print(arr,x-1,target);
+
+}
+
+int main(){
+  int arr[]={1,2,3,4,5,6,7,8};
+  cout<<print(arr,8,5);
+}
+
+A function countAndSay is defined as:
+countAndSay(1) = “1”
+countAndSay(n) is the way you would "say" the digit string from countAndSay(n-1), which is
+then converted into a different digit string.
+So, if sample input is n = 4,
+countAndSay(1) = 1
+countAndSay(2) = “one 1” => 11
+countAndSay(3) = “two 1” => 21
+countAndSay(4) = “one 2 one 1” => 1211
+Solution:
+
+#include <bits/stdc++.h>
+using namespace std;
+string countAndSay(int n) {
+if(n == 1) {
+return "1";
+}
+string ans = "";
+string smallAns = countAndSay(n-1);
+for(int i = 0; i < smallAns.size();) {
+int count = 1;
+int j = i+1;
+while(j < smallAns.size() && smallAns[i] == smallAns[j])
+{
+j++;
+count++;
+}
+ans = ans + to_string(count) + smallAns[i];
+i = j;
+}
+return ans;
+}
+int main() {
+    cout<<countAndSay(4);
+}
+
+Q4 Given an array of integers, print a sum triangle using recursion from it such that the first level
+has all array elements. After that, at each level the number of elements is one less than the
+previous
+level and elements at the level will be the sum of consecutive two elements in the previous
+level.
+So, if sample input is [5, 4, 3, 2, 1], sample output will be:
+[5, 4, 3, 2, 1]
+[9, 7, 5, 3]
+[16, 12, 8]
+[28, 20]
+[48]
+
+-->
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void print(vector<int>&arr,int n){
+    if(n==0)return;
+     for(int i=0;i<arr.size();i++){
+     cout<<arr[i]<<" ";
+   }
+    vector<int>v(n-1);
+    for(int i=0;i<n-1;i++){
+    v[i]=arr[i]+arr[i+1];
+   }
+   cout<<endl;
+   print(v,n-1);
+
+}
+int main(){
+    vector<int>arr={5,4,3,2,1};
+    print(arr,5);
+}
+
