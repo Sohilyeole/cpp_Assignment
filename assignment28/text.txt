@@ -1,0 +1,42 @@
+Q1 Write a recursive function to reverse a number. Avoid preceding 0s in the reversed number.
+-->
+int reverse(int x,int rev){
+  if(x==0)return rev;
+ 
+  int rem=x%10;
+  rev=rev*10+rem;
+  reverse(x/10,rev);
+ }
+
+int main(){
+  int x;
+  cin>>x;
+cout<<reverse(x,0);
+}
+
+Q2 Print all the increasing sequences of length k from first n natural numbers.
+-->
+#include<iostream>
+using namespace std;
+#include<vector>
+void printIncreasingSequences(int curr, int n, int k, vector<int> &ans) {
+if(ans.size() == k) {
+for(int i = 0; i < k; ++i) {
+cout << ans[i] << " ";
+}
+cout << endl;
+return;
+}
+for(int i = curr+1; i <= n; ++i) {
+ans.push_back(i);
+printIncreasingSequences(i, n, k, ans);
+ans.pop_back();
+}
+}
+int main() {
+int n, k;
+vector<int>ans;
+cin >> n >> k;
+printIncreasingSequences(0, n, k,ans);
+
+}
